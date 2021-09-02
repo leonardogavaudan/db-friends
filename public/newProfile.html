@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New profile</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary">
+
+    <div class="container">
+        <div class="display-1 text-light text-center my-2">db-friends</div>
+        <h5 class="text-light text-center mb-5">
+            A database platform to keep for friends and contacts
+        </h5>
+
+        <ul class="nav justify-content-center bg-dark py-1 mb-4">
+            <li class="nav-item me-4">
+                <a class="nav-link text-light strong" href="./index.html"><strong>HOME</strong></a>
+            </li>
+            <li class="nav-item me-4">
+                <a class="nav-link text-light strong" href="#"><strong>CONTACTS</strong></a>
+            </li>
+            <li class="nav-item me-4">
+                <a class="nav-link text-light" href="#"><strong>ABOUT</strong></a>
+            </li>
+        </ul>
+
+        <div class="display-6 text-light text-start mt-2 mb-5">Create a new profile</div>
+
+        <form action="./newProfile.html" method="POST">
+            <div class="row mb-3 justify-content-center">
+                <div class="form-group col-md">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="first_name">
+                </div>
+
+                <div class="form-group col-md">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="last_name">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary col-1">Create</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
