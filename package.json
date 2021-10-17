@@ -1,11 +1,21 @@
 {
+  "name": "dbfriends",
+  "description": "an app to keep track of contacts",
+  "main": "express.js",
+  "scripts": {
+    "start": "node express.js",
+    "dev": "nodemon express.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^2.3.2",
     "path": "^0.12.7",
+    "sequelize": "^6.7.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "author": "Leonardo Gavaudan",
+  "license": "MIT"
 }
