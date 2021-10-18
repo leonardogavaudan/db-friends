@@ -1,7 +1,7 @@
 const {Sequelize, DataTypes} = require('sequelize');
 const db = require('../config/database.js');
 
-const User = db.define('user',
+const Contact = db.define('contact',
     {
         id: {
             type: DataTypes.UUID,
@@ -16,15 +16,14 @@ const User = db.define('user',
         },
         email:{
             type: DataTypes.STRING(50)
-        },
-        password:{
-            type: DataTypes.STRING(50)
         }
     },
     {
-        tableName: 'users',
+        tableName: 'contacts',
         timestamps: false
     }
-);
+)
 
-module.exports = User;
+Contact.sync();
+
+module.exports = Contact;

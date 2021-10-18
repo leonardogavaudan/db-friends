@@ -1,9 +1,8 @@
-const mysql = require('mysql2');
 const { Sequelize } = require('sequelize');
 
 const db = new Sequelize('dbfriends', 'testuser', 'testpassword', {
     dialect: 'mysql',
-    host: 'localhost'
+    host: 'localhost',
 });
 
 try {
@@ -13,4 +12,4 @@ try {
     console.error('Unable to connect to the database:', error);
 }
 
-module.exports = {db};
+module.exports = db;
