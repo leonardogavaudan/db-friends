@@ -13,4 +13,5 @@ app.listen(port, () => {
 
 // Routes
 app.use('/newProfile/', require('./routes/newProfile'));
+app.use('/register/', require('./routes/register'));
 app.use(express.static(path.join(__dirname, 'public')));
