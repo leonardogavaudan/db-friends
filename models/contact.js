@@ -1,4 +1,4 @@
-const {Sequelize, DataTypes} = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const db = require('../config/database.js');
 
 const Contact = db.define('contact',
@@ -14,7 +14,7 @@ const Contact = db.define('contact',
         lastName: {
             type: DataTypes.STRING(50)
         },
-        email:{
+        email: {
             type: DataTypes.STRING(50)
         }
     },
