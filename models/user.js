@@ -1,12 +1,24 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const db = require('../config/database.js');
+const connection = require('../config/database.js');
 
-const User = db.define('user',
+const User = connection.define('user',
     {
         id: {
             type: DataTypes.UUID,
             defaultValue: Sequelize.UUIDV4,
             primaryKey: true
+        },
+        username: {
+            type: DataTypes.STRING(50)
+        },
+        password: {
+            type: DataTypes.STRING(50)
+        },
+        hash: {
+            type: DataTypes.STRING(64)
+        },
+        salt: {
+            type: DataTypes.STRING(32)
         },
         firstName: {
             type: DataTypes.STRING(50)
@@ -15,9 +27,6 @@ const User = db.define('user',
             type: DataTypes.STRING(50)
         },
         email: {
-            type: DataTypes.STRING(50)
-        },
-        password: {
             type: DataTypes.STRING(50)
         }
     },
