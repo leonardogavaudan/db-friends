@@ -24,7 +24,7 @@ const verifyCallback = (username, password, done) => {
         .catch((err) => {
             done(err);
         });
-}
+};
 
 const strategy = new LocalStrategy(customFields, verifyCallback);
 
@@ -39,5 +39,5 @@ passport.deserializeUser((userId, done) => {
         .then((user) => {
             done(null, user);
         })
-        .catch(err => done(err))
+        .catch(err => done(err));
 });

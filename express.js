@@ -3,7 +3,7 @@ const path = require('path');
 const connection = require('./config/database');
 
 const session = require('express-session');
-let MySQLStore = require('express-mysql-session')(session);
+let SequelizeStore = require('connect-session-sequelize')(session.Store);
 let passport = require('passport');
 let crypto = require('crypto');
 
@@ -17,7 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Session setup
-var sessionStore = new MySQLStore({}, connection);
+let sessionStore = new SequelizeStore({
+    db: connection,
+})
 
 app.use(session({
     secret: process.env.SECRET,
@@ -29,7 +31,11 @@ app.use(session({
     }
 }));
 
+sessionStore.sync();
+
 // Passport authentication
+require('./config/passport');
+
 app.use(passport.initialize());
 app.use(passport.session());
 
