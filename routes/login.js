@@ -3,16 +3,20 @@ const router = express.Router();
 const passport = require('passport');
 
 router.get('/', (req, res, next) => {
-    const form = '<h1>Login Page</h1><form method="POST" action="/login">\
-    Enter Username:<br><input type="text" name="username">\
-    <br>Enter Password:<br><input type="password" name="password">\
-    <br><br><input type="submit" value="Submit"></form>';
+    res.sendFile('public/login.html', {root: './' })
+});
 
-    res.send(form);
+router.get('/login-success', (req, res, next) => {
+    res.send('<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p>');
+});
+
+
+router.get('/login-failure', (req, res, next) => {
+    res.send('You entered the wrong password.');
 });
 
 // Since we are using the passport.authenticate() method, we should be redirected no matter what 
-app.post('/', passport.authenticate('local', { failureRedirect: 'login-failure', successRedirect: 'login-success' }), (err, req, res, next) => {
+router.post('/', passport.authenticate('local', { failureRedirect: 'login-failure', successRedirect: 'login-success' }), (err, req, res, next) => {
     if (err) next(err);
 });
 

@@ -4,7 +4,7 @@ const User = require('../models/user');
 const validPassword = require('../lib/passwordUtils').validPassword;
 
 const customFields = {
-    usernameField: 'username',
+    usernameField: 'email',
     passwordField: 'password'
 };
 
@@ -35,7 +35,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((userId, done) => {
-    User.findById(userId)
+    User.findByPk(userId)
         .then((user) => {
             done(null, user);
         })

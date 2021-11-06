@@ -1,11 +1,9 @@
 const express = require('express');
 const path = require('path');
 const connection = require('./config/database');
-
 const session = require('express-session');
 let SequelizeStore = require('connect-session-sequelize')(session.Store);
 let passport = require('passport');
-let crypto = require('crypto');
 
 // Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
 require('dotenv').config();
@@ -18,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Session setup
 let sessionStore = new SequelizeStore({
-    db: connection,
+    db: connection
 })
 
 app.use(session({
@@ -31,6 +29,7 @@ app.use(session({
     }
 }));
 
+// Create a 'sessions' table if it doesn't exist yet
 sessionStore.sync();
 
 // Passport authentication
@@ -42,6 +41,7 @@ app.use(passport.session());
 // Routes
 app.use('/newProfile/', require('./routes/newProfile'));
 app.use('/register/', require('./routes/register'));
+app.use('/login/', require('./routes/login'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {

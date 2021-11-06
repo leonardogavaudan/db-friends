@@ -9,25 +9,22 @@ const User = connection.define('user',
             primaryKey: true
         },
         username: {
-            type: DataTypes.STRING(50)
-        },
-        password: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING
         },
         hash: {
-            type: DataTypes.STRING(64)
+            type: DataTypes.STRING
         },
         salt: {
-            type: DataTypes.STRING(32)
+            type: DataTypes.STRING
         },
         firstName: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING
         },
         lastName: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING
         },
         email: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING
         }
     },
     {

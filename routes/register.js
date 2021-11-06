@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
     const salt = saltHash.salt;
     const hash = saltHash.hash;
 
-    console.log(req.body.username);
+    console.log(hash)
 
     const newUser = new User({
         username: req.body.username,
