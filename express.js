@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const connection = require('./config/database');
+const connection = require('./server/config/database');
 const session = require('express-session');
 let SequelizeStore = require('connect-session-sequelize')(session.Store);
 let passport = require('passport');
@@ -8,6 +8,7 @@ let passport = require('passport');
 // Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
 require('dotenv').config();
 
+// General app
 const app = express();
 const port = 3000;
 

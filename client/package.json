@@ -1,0 +1,25 @@
+{
+  "name": "dbfriends-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd dist && npx http-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Gavaudan",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "http-server": "^14.0.0",
+    "webpack": "^5.64.0"
+  }
+}
