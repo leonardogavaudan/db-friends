@@ -1,54 +1,51 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
-App = () => {
-    return (
-        <div className="container">
-			<div className="display-1 text-light text-center my-2">db-friends</div>
-			<h5 className="text-light text-center mb-5">
+const App = () => {
+	return (
+		<div>
+			<div>db-friends</div>
+			<h5>
 				A database platform to keep for friends and contacts
 			</h5>
 
-			<ul className="nav justify-content-center bg-dark py-1 mb-4">
-				<li className="nav-item me-4">
-					<a className="nav-link text-light strong" href="index.html"><strong>HOME</strong></a>
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
 				</li>
-				<li className="nav-item me-4">
-					<a className="nav-link text-light strong" href="#"><strong>CONTACTS</strong></a>
+				<li>
+					<a href="#">CONTACTS</a>
 				</li>
-				<li className="nav-item me-4">
-					<a className="nav-link text-light" href="#"><strong>ABOUT</strong></a>
+				<li>
+					<a href="#">ABOUT</a>
 				</li>
-				<li className="nav-item me-4">
-					<a className="nav-link text-light" href="#"><strong>LOGIN</strong></a>
+				<li>
+					<a href="#">LOGIN</a>
 				</li>
-				<li className="nav-item me-4">
-					<a className="nav-link text-light" href="register.html"><strong>REGISTER</strong></a>
+				<li>
+					<a href="register.html">REGISTER</a>
 				</li>
 			</ul>
 
 			<form action="search">
-				<div className="row justify-content-center mb-3">
-					<div className="form-group col-md">
-						<label for="fname" className="form-label strong">First Name</label>
-						<input type="text" className="form-control" id="fname" name="firstName"/>
+				<div>
+					<div>
+						<label for="fname">First Name</label>
+						<input type="text" id="fname" name="firstName" />
 					</div>
 
-					<div className="form-group col-md">
-						<label for="lname" className="form-label">Last Name</label>
-						<input type="text" className="form-control" id="lname" name="lastName"/>
+					<div>
+						<label for="lname">Last Name</label>
+						<input type="text" id="lname" name="lastName" />
 					</div>
 				</div>
 
-				<div type="submit" className="btn btn-primary col-1">Search</div>
+				<Button type="submit">Search</Button>
 			</form>
 
-			<div className="row justify-content-center">
-				<a className="btn btn-dark text-light col-6 mt-5 text-center" href="./newProfile.html">
-					Create a new profile
-				</a>
-			</div>
-		</div>
-    );
+			<Button variant="contained" href="./newProfile.html"> Create a new profile </Button>
+		</div >
+	);
 };
 
 export default App;
