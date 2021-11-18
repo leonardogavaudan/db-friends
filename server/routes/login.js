@@ -3,13 +3,12 @@ const router = express.Router();
 const passport = require('passport');
 
 router.get('/', (req, res, next) => {
-    res.sendFile('public/login.html', {root: './' })
+    res.sendFile('public/login.html', { root: './' })
 });
 
 router.get('/login-success', (req, res, next) => {
     res.send('<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p>');
 });
-
 
 router.get('/login-failure', (req, res, next) => {
     res.send('You entered the wrong password.');

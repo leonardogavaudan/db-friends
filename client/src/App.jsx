@@ -1,30 +1,23 @@
 import React from 'react';
 
+import './App.css'
+
 import Navbar from './components/Navbar';
 import Heading from './components/Heading';
 
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import { Container } from '@material-ui/core';
 
 const App = () => {
 	return (
-		<Box bgcolor="grey">
+		<Container>
 			<Heading />
-
 			<Navbar />
 
-			<form action="search">
-				<label for="fname">First Name</label>
-				<input type="text" id="fname" name="firstName" />
-
-				<label for="lname">Last Name</label>
-				<input type="text" id="lname" name="lastName" />
-
-				<Button type="submit">Search</Button>
-			</form>
-
-			<Button variant="contained" href="./newProfile.html"> Create a new profile </Button>
-		</Box >
+			<Typography variant="h1"> </Typography>
+		</Container>
 	);
 };
 
