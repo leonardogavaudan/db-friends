@@ -5,7 +5,7 @@ import './App.css'
 import Navbar from './components/Navbar';
 import Heading from './components/Heading';
 
-import { Typography } from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 import { Container } from '@material-ui/core';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 			<Heading />
 			<Navbar />
 
-			<Typography variant="h1"> </Typography>
+			<Typography variant="h1"></Typography>
 		</Container>
 	);
 };
