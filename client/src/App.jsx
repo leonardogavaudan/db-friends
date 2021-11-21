@@ -1,21 +1,25 @@
 import React from 'react';
 
 import './App.css'
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import Heading from './components/Heading';
-
-import { Typography } from '@material-ui/core';
-import { Container } from '@material-ui/core';
+import Home from './routes/Home';
+import About from './routes/About';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import Search from './routes/Search';
 
 const App = () => {
 	return (
-		<Container>
-			<Heading />
-			<Navbar />
-
-			<Typography variant="h1"></Typography>
-		</Container>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />}>
+					<Route path="about" element={<About />} />
+					<Route path="register" element={<Register />} />
+					<Route path="login" element={<Login />} />
+				</Route>
+			</Routes>
+		</Router>
 	);
 };
 

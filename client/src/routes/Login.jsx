@@ -8,9 +8,6 @@ import Heading from '../components/Heading';
 const Login = () => {
     return (
         <div>
-            <Heading />
-            <Navbar />
-
             <div>Login</div>
 
             <form action="./login/" method="POST">
