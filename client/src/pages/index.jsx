@@ -1,8 +1,9 @@
 import { Container, Typography } from '@mui/material';
+import PageTitle from '../components/PageTitle';
 
 const Home = () => (
   <Container>
-    <Typography variant="h4">HOME</Typography>
+    <PageTitle>HOME</PageTitle>
   </Container>
 );
 
