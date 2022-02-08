@@ -1,39 +1,36 @@
 import styled from '@emotion/styled';
-
 import Link from './Link';
 import { Button } from '@mui/material';
+// import AddIcon from '@mui/icons-material/Add';
+// import HomeIcon from '@mui/icons-material/Home';
 
 const Bar = styled.div`
-  background-color: ${(props) => props.theme.palette.secondary.main};
   display: flex;
 `;
+
+const CustomLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.text.primary,
+  textDecoration: 'none',
+}));
 
 const Navbar = () => (
   <Bar>
     <div>
-      <Button variant="text">
-        <Link href="/" color="textPrimary">
-          <a>HOME</a>
-        </Link>
+      <Button>
+        <CustomLink href="/">HOME</CustomLink>
       </Button>
 
-      <Button variant="text">
-        <Link href="/login" color="textPrimary">
-          <a>LOGIN</a>
-        </Link>
+      <Button>
+        <CustomLink href="/login">LOGIN</CustomLink>
       </Button>
 
-      <Button variant="text">
-        <Link href="/about" color="textPrimary">
-          <a>ABOUT</a>
-        </Link>
+      <Button>
+        <CustomLink href="/about">ABOUT</CustomLink>
       </Button>
     </div>
 
-    <Button variant="text">
-      <Link href="/new_contact" color="textPrimary">
-        <a>+</a>
-      </Link>
+    <Button>
+      <CustomLink href="/new_contact">+</CustomLink>
     </Button>
   </Bar>
 );
