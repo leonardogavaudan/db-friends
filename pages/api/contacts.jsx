@@ -4,6 +4,10 @@ const createNewContact = (req, res) => {
   const method = req.method;
 
   switch (method) {
+    case 'GET':
+      Contact.findAll().then((response) => res.json(response));
+      break;
+
     case 'POST':
       const { firstName, lastName } = req.body;
       console.log(firstName);
