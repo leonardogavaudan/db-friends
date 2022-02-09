@@ -14,7 +14,7 @@ const NewContact = (props) => {
 
     console.log(data);
 
-    fetch('http://127.0.0.1:8080', {
+    fetch('/api/contacts', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
