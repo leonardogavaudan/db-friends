@@ -1,9 +1,10 @@
 import { Container, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import PageTitle from '../components/PageTitle';
+import Contact from '../components/Contact';
 
 const Home = () => {
-  const [contacts, setContacts] = useState();
+  const [contacts, setContacts] = useState([]);
 
   const getInitialData = () => {
     return fetch('/api/contacts', {
@@ -17,18 +18,29 @@ const Home = () => {
   };
 
   useEffect(() => {
-    console.log('here');
     getInitialData().then((response) => {
-      setContacts(JSON.stringify(response));
+      setContacts(response);
       console.log(JSON.stringify(response));
     });
     console.log('Mounting Component');
   }, []);
 
+  // console.log('here');
+  // let contactComponents =
+
   return (
     <Container>
       <PageTitle>HOME</PageTitle>
-      <p>{contacts}</p>
+      {contacts.map((contact, i) => {
+        console.log('here');
+        return (
+          <Contact
+            key={i}
+            firstName={contact.firstName}
+            lastName={contact.lastName}
+          />
+        );
+      })}
     </Container>
   );
 };

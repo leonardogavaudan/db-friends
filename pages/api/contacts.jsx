@@ -18,6 +18,7 @@ const createNewContact = (req, res) => {
       console.log(`just saved ${firstName} ${lastName}`);
 
       res.status(200);
+      res.send();
       break;
 
     default:
