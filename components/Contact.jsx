@@ -1,10 +1,12 @@
-import { Container, Typography } from '@mui/material';
+import { Container, Paper, Typography } from '@mui/material';
 
 const Contact = (props) => {
   return (
     <Container>
-      <Typography variant="body2">{props.firstName}</Typography>
-      <Typography variant="body2">{props.lastName}</Typography>
+      <Paper elevation={3}>
+        <Typography variant="body2">{props.firstName}</Typography>
+        <Typography variant="body2">{props.lastName}</Typography>
+      </Paper>
     </Container>
   );
 };

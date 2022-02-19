@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import Link from './Link';
 import { Button } from '@mui/material';
-// import AddIcon from '@mui/icons-material/Add';
-// import HomeIcon from '@mui/icons-material/Home';
 
 const Bar = styled.div`
   display: flex;
