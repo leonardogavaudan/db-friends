@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import Link from './Link';
 import { Button } from '@mui/material';
 
-const Bar = styled.div`
-  display: flex;
-`;
+const Bar = styled.div(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'flex-start',
+}));
 
 const CustomLink = styled(Link)(({ theme }) => ({
   color: theme.palette.text.primary,
@@ -13,23 +14,21 @@ const CustomLink = styled(Link)(({ theme }) => ({
 
 const Navbar = () => (
   <Bar>
-    <div>
-      <Button>
-        <CustomLink href="/">HOME</CustomLink>
-      </Button>
+    <CustomLink href="/">
+      <Button>HOME</Button>
+    </CustomLink>
 
-      <Button>
-        <CustomLink href="/login">LOGIN</CustomLink>
-      </Button>
+    <CustomLink href="/login">
+      <Button>LOGIN</Button>
+    </CustomLink>
 
-      <Button>
-        <CustomLink href="/about">ABOUT</CustomLink>
-      </Button>
-    </div>
+    <CustomLink href="/about">
+      <Button>ABOUT</Button>
+    </CustomLink>
 
-    <Button>
-      <CustomLink href="/new_contact">+</CustomLink>
-    </Button>
+    <CustomLink href="/new_contact">
+      <Button>+</Button>
+    </CustomLink>
   </Bar>
 );
 

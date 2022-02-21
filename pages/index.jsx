@@ -1,5 +1,8 @@
-import { Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
+
+import styled from '@emotion/styled';
+
 import PageTitle from '../components/PageTitle';
 import Contact from '../components/Contact';
 
@@ -25,22 +28,28 @@ const Home = () => {
     console.log('Mounting Component');
   }, []);
 
-  // console.log('here');
-  // let contactComponents =
+  const CustomBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  }));
 
   return (
     <Container>
       <PageTitle>HOME</PageTitle>
-      {contacts.map((contact, i) => {
-        console.log('here');
-        return (
-          <Contact
-            key={i}
-            firstName={contact.firstName}
-            lastName={contact.lastName}
-          />
-        );
-      })}
+
+      <CustomBox>
+        {contacts.map((contact, i) => {
+          console.log('here');
+          return (
+            <Contact
+              key={i}
+              firstName={contact.firstName}
+              lastName={contact.lastName}
+            />
+          );
+        })}
+      </CustomBox>
     </Container>
   );
 };
