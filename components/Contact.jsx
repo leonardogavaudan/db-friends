@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const CustomCard = styled(Card)(({ theme }) => ({
   margin: '2em',
-  flex: '1',
+  flexBasis: '40%',
   padding: 0,
 }));
 

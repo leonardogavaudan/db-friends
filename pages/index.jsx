@@ -30,8 +30,9 @@ const Home = () => {
 
   const CustomBox = styled(Box)(({ theme }) => ({
     display: 'flex',
+    flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   }));
 
   return (
