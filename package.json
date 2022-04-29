@@ -8,6 +8,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"clsx": "^1.1.1",
 		"dotenv": "^16.0.0",
 		"mysql2": "^2.3.3",
 		"next": "12.1.5",
