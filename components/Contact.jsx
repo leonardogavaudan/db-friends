@@ -1,21 +1,20 @@
-import { Card, Typography, Button } from '@mui/material';
-import styled from '@emotion/styled';
+import React from 'react';
 
-const CustomCard = styled(Card)(({ theme }) => ({
-  margin: '2em',
-  flexBasis: '40%',
-  padding: 0,
-}));
+// const div = styled(Card)(({ theme }) => ({
+//   margin: '2em',
+//   flexBasis: '40%',
+//   padding: 0,
+// }));
 
 const Contact = (props) => {
   return (
-    <CustomCard elevation={3}>
-      <Button variant="outlined" sx={{ width: '100%' }}>
-        <Typography variant="body2">
+    <div elevation={3}>
+      <button variant="outlined" sx={{ width: '100%' }}>
+        <div variant="body2">
           {props.firstName} {props.lastName}
-        </Typography>
-      </Button>
-    </CustomCard>
+        </div>
+      </button>
+    </div>
   );
 };
 

@@ -1,35 +1,25 @@
-import styled from '@emotion/styled';
-import Link from './Link';
-import { Button } from '@mui/material';
+import React from 'react';
+import Link from 'next/link';
+import clsx from 'clsx';
 
-const Bar = styled.div(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'flex-start',
-}));
+const Navbar = ({ className }) => (
+	<div className={clsx(className, 'flex gap-x-5')}>
+		<Link href="/">
+			<button>HOME</button>
+		</Link>
 
-const CustomLink = styled(Link)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  textDecoration: 'none',
-}));
+		<Link href="/login">
+			<button>LOGIN</button>
+		</Link>
 
-const Navbar = () => (
-  <Bar>
-    <CustomLink href="/">
-      <Button>HOME</Button>
-    </CustomLink>
+		<Link href="/about">
+			<button>ABOUT</button>
+		</Link>
 
-    <CustomLink href="/login">
-      <Button>LOGIN</Button>
-    </CustomLink>
-
-    <CustomLink href="/about">
-      <Button>ABOUT</Button>
-    </CustomLink>
-
-    <CustomLink href="/new_contact">
-      <Button>+</Button>
-    </CustomLink>
-  </Bar>
+		<Link href="/new-contact">
+			<button>+</button>
+		</Link>
+	</div>
 );
 
 export default Navbar;
