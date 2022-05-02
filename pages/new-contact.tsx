@@ -1,13 +1,15 @@
-import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-interface Inputs {
+interface FormInputs {
 	firstName: string;
 	lastName: string;
+	middleName: string;
+	email: string;
+	dateOfBirth: string;
 }
 
 const NewContact = () => {
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
+	const onSubmit: SubmitHandler<FormInputs> = (data) => {
 		console.log(data);
 
 		fetch('/api/contacts', {
@@ -27,23 +29,58 @@ const NewContact = () => {
 		handleSubmit,
 		watch,
 		formState: { errors },
-	} = useForm<Inputs>();
+	} = useForm<FormInputs>();
 
 	return (
 		<div className="flex flex-col">
-			<div className="text-zinc-500q mb-5 text-3xl">NEW CONTACT</div>
+			<div className="mb-16 text-3xl text-zinc-500">NEW CONTACT</div>
 
-			<form
-				onSubmit={handleSubmit(onSubmit)}
-				className="flex flex-col text-black">
-				<div className="flex max-w-md flex-col gap-y-5">
-					<input {...register('firstName', { required: true })} />
-					<input {...register('lastName', { required: true })} />
+			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+				<div className="flex max-w-md flex-col gap-y-6">
+					<div>
+						<div className="mb-2 ml-2 text-zinc-400">Last name</div>
+						<input
+							{...register('lastName', { required: true })}
+							className=" h-9 w-full rounded py-1 px-2 text-black"
+						/>
+					</div>
+
+					<div>
+						<div className="mb-2 ml-2 text-zinc-400">First name</div>
+						<input
+							{...register('firstName', { required: true })}
+							className=" h-9 w-full rounded py-1 px-2 text-black"
+						/>
+					</div>
+
+					<div>
+						<div className="mb-2 ml-2 text-zinc-400">Middle name</div>
+						<input
+							{...register('middleName')}
+							className=" h-9 w-full rounded py-1 px-2 text-black"
+						/>
+					</div>
+
+					<div>
+						<div className="mb-2 ml-2 text-zinc-400">Email</div>
+						<input
+							{...register('email')}
+							className=" h-9 w-full rounded py-1 px-2 text-black"
+						/>
+					</div>
+
+					<div>
+						<div className="mb-2 ml-2 text-zinc-400">Date of birth</div>
+						<input
+							{...register('dateOfBirth')}
+							className=" h-9 w-full rounded py-1 px-2 text-black"
+						/>
+					</div>
 
 					<input
 						type="submit"
-						defaultValue={'Create'}
-						className="mt-8 w-32 self-end rounded bg-white"
+						value="Create"
+						className="mt-8 w-32 cursor-auto self-end rounded bg-white text-black"
 					/>
 				</div>
 			</form>
