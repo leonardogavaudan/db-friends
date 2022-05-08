@@ -1,11 +1,17 @@
 module.exports = {
+	env: {
+		// allows use of 'module'
+		node: true,
+		// allows use of 'fetch'
+		browser: true,
+	},
 	extends: [
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
-		'plugin:eslint-plugin-next',
+		'plugin:@next/next/recommended',
 		'plugin:@typescript-eslint/recommended',
-		// 'prettier',
+		'prettier',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -13,19 +19,19 @@ module.exports = {
 		ecmaFeatures: {
 			jsx: true,
 		},
-		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
 	plugins: [
 		'react',
 		'eslint-plugin-react-hooks',
-		'eslint-plugin-next',
+		'@next/eslint-plugin-next',
 		'@typescript-eslint/eslint-plugin',
 	],
 	rules: {
-		indent: ['error', 'tab'],
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'always'],
+		'react/react-in-jsx-scope': 0,
+		'react/jsx-uses-react': 0,
 	},
 };

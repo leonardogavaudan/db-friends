@@ -1,5 +1,5 @@
 {
-	"name": "test",
+	"name": "db-friends",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -19,12 +19,14 @@
 		"sqlite3": "^5.0.2"
 	},
 	"devDependencies": {
+		"@next/eslint-plugin-next": "^12.1.6",
 		"@types/node": "^17.0.14",
 		"@types/react": "^17.0.38",
 		"@typescript-eslint/eslint-plugin": "^5.21.0",
 		"@typescript-eslint/parser": "^5.21.0",
 		"autoprefixer": "^10.4.5",
 		"eslint": "^8.8.0",
+		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-react": "^7.29.4",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"postcss": "^8.4.12",
