@@ -7,8 +7,8 @@
 
 - Git clone the project on your local computer: `git clone git@github.com:leonardogavaudan/db-friends.git`
 - Go into the cloned repository: `cd db-friends`
-- Install the necessary node modules: `npm install` (this assumes node and npm are both installed)
-- Start up the application: `npm run dev`
+- Install the necessary node modules: `yarn install` (this assumes node and npm are both installed)
+- Start up the application: `yarn start:dev`
 - Your terminal will indicate which port the application started on (usually `localhost:3000`)
 
 ## How the application works
