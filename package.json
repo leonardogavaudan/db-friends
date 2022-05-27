@@ -2,9 +2,9 @@
 	"name": "db-friends",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"start:dev": "next dev",
 		"lint": "next lint"
 	},
 	"dependencies": {

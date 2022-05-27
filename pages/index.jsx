@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 
 import Contact from '../components/Contact';
 
+export const getServerSideProps = async (context) => {
+	return {
+		props: {},
+	};
+};
+
 const Home = () => {
 	const [contacts, setContacts] = useState([]);
 
